@@ -5,8 +5,8 @@ import {
   getLivreParId,
   chercherParAuteur,
 } from "./lecture.ts";
-
 import { marquerIndisponible, corrigerAnnee } from "./update.ts";
+import { supprimerLivre, supprimerAnciens } from "./delete.ts";
 
 async function seed() {
   const livres = await prisma.livre.createMany({
@@ -64,6 +64,10 @@ async function main() {
   console.log("\n--- Test des updates ---");
   console.log(await marquerIndisponible(1));
   console.log(await corrigerAnnee(2, 2024));
+
+  console.log("\n--- Test de Delete ---");
+  console.log(await supprimerLivre(1));
+  console.log(await supprimerAnciens(2018));
 
   await prisma.$disconnect();
 }
