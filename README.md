@@ -48,3 +48,7 @@ npm run dev
 
 // Voir les resultat
 npm run db:studio
+```
+
+## Example d'affichage studio
+<img width="1915" height="924" alt="image" src="https://github.com/user-attachments/assets/6e29bb8f-c923-4d49-8236-f800d4a55a9f" />
