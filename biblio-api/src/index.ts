@@ -6,6 +6,8 @@ import {
   chercherParAuteur,
 } from "./lecture.ts";
 
+import { marquerIndisponible, corrigerAnnee } from "./update.ts";
+
 async function seed() {
   const livres = await prisma.livre.createMany({
     data: [
@@ -58,6 +60,10 @@ async function main() {
 
   console.log("\n--- Recherche : 'saint' ---");
   console.log(await chercherParAuteur("saint"));
+
+  console.log("\n--- Test des updates ---");
+  console.log(await marquerIndisponible(1));
+  console.log(await corrigerAnnee(2, 2024));
 
   await prisma.$disconnect();
 }
