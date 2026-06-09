@@ -1,4 +1,10 @@
 import prisma from "../utils/prisma";
+import {
+  getTousLesLivres,
+  getLivresDisponibles,
+  getLivreParId,
+  chercherParAuteur,
+} from "./lecture.ts";
 
 async function seed() {
   const livres = await prisma.livre.createMany({
@@ -40,6 +46,19 @@ async function seed() {
 
 async function main() {
   await seed();
+
+  console.log("\n--- Tous les livres ---");
+  console.log(await getTousLesLivres());
+
+  console.log("\n--- Livres disponible ---");
+  console.log(await getLivresDisponibles());
+
+  console.log("\n--- Livre #1 ---");
+  console.log(await getLivreParId(1));
+
+  console.log("\n--- Recherche : 'saint' ---");
+  console.log(await chercherParAuteur("saint"));
+
   await prisma.$disconnect();
 }
 
