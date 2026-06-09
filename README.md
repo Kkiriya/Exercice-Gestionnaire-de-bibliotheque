@@ -4,11 +4,22 @@
 Émile Valade
 Jean-Simon Cyr
 
-## Objectif du projet
-Le projet cree deux tables dans une base de donnees Neon connecter avec prisma. Les deux tables sont respectivement:
-- Livre
-- Emprunt
-Elles servent a stocker un inventaire de livres ainsi que leurs historique d'emprunts
+## Description
+
+Cette application est un mini-backend développé avec **Node.js, TypeScript, Prisma et PostgreSQL (Neon)**. Elle permet de gérer un catalogue de livres ainsi que leurs emprunts.
+
+Le projet démontre l'utilisation des opérations CRUD (Create, Read, Update, Delete) à l'aide de Prisma et d'une base de données PostgreSQL hébergée sur Neon.
+
+### Fonctionnalités
+
+Ajouter des livres au catalogue
+Consulter tous les livres
+Rechercher des livres par identifiant ou auteur
+Filtrer les livres disponibles
+Modifier les informations d'un livre
+Supprimer un livre
+Gérer les emprunts de livres
+Consulter les emprunts avec les informations du livre associé
 
 ## Pour Installer le projet
 
