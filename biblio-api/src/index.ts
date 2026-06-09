@@ -7,6 +7,7 @@ import {
 } from "./lecture.ts";
 import { marquerIndisponible, corrigerAnnee } from "./update.ts";
 import { supprimerLivre, supprimerAnciens } from "./delete.ts";
+import { emprunterLivre, listerEmprunts, rendreLivre } from "./emprunt.ts";
 
 async function seed() {
   const livres = await prisma.livre.createMany({
@@ -68,6 +69,11 @@ async function main() {
   console.log("\n--- Test de Delete ---");
   console.log(await supprimerLivre(1));
   console.log(await supprimerAnciens(2018));
+
+  console.log("\n--- Test des emprunts ---");
+  console.log(await emprunterLivre(2, "Dylan"));
+  console.log(await listerEmprunts());
+  console.log(await rendreLivre(2));
 
   await prisma.$disconnect();
 }
