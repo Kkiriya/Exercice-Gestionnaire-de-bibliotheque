@@ -73,7 +73,7 @@ async function main() {
   console.log("\n--- Test des emprunts ---");
   console.log(await emprunterLivre(2, "Dylan"));
   console.log(await listerEmprunts());
-  console.log(await rendreLivre(2));
+  console.log(await rendreLivre(1));
 
   await prisma.$disconnect();
 }
