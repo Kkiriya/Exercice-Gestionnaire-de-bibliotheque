@@ -1,13 +1,13 @@
-import prisma from "../utils/prisma";
+import prisma from "../utils/prisma.js";
 import {
   getTousLesLivres,
   getLivresDisponibles,
   getLivreParId,
   chercherParAuteur,
-} from "./lecture.ts";
-import { marquerIndisponible, corrigerAnnee } from "./update.ts";
-import { supprimerLivre, supprimerAnciens } from "./delete.ts";
-import { emprunterLivre, listerEmprunts, rendreLivre } from "./emprunt.ts";
+} from "./lecture";
+import { marquerIndisponible, corrigerAnnee } from "./update";
+import { supprimerLivre, supprimerAnciens } from "./delete";
+import { emprunterLivre, listerEmprunts, rendreLivre } from "./emprunt";
 
 async function seed() {
   const livres = await prisma.livre.createMany({

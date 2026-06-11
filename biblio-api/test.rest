@@ -1,0 +1,15 @@
+GET http://localhost:3000/livres/
+
+###
+
+POST http://localhost:3000/livres/
+Content-Type: application/json; charset=utf-8
+
+{
+    "titre": "Livre Test",
+    "auteur": "Auteur Test",
+}
+
+###
+
+DELETE http:localhost:3000/livres/3
